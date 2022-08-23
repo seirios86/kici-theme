@@ -1,7 +1,7 @@
 import { memo } from "react";
 import type { KcContext } from "./kcContext";
-import { defaultKcProps as props } from "keycloakify";
-import { Login } from "keycloakify/lib/components/Login";
+import { defaultKcProps } from "keycloakify";
+import { Login } from "./Login";
 import { Register } from "./Register";
 import { Info } from "keycloakify/lib/components/Info";
 import { Error } from "keycloakify/lib/components/Error";
@@ -10,16 +10,38 @@ import { MyExtraPage1 } from "./MyExtraPage1";
 import { MyExtraPage2 } from "./MyExtraPage2";
 import { KcApp as KcAppBase } from "keycloakify/lib/components/KcApp";
 import "./kcMessagesExtension";
+import { makeStyles } from "./makeStyles";
 
 export const KcApp = memo(({ kcContext }: { kcContext: KcContext; }) => {
+
+    const { classes } = useStyles();
+
+    const kcProps = {
+        ...defaultKcProps,
+        "kcButtonPrimaryClass": [
+            // ...defaultKcProps.kcButtonPrimaryClass,
+            classes.kcButtonPrimaryClass,
+        ],
+    };
+
     switch (kcContext.pageId) {
-        case "login.ftl": return <Login {...{ kcContext, ...props }} />;
-        case "register.ftl": return <Register {...{ kcContext, ...props }} />;
-        case "info.ftl": return <Info {...{ kcContext, ...props }} />;
-        case "error.ftl": return <Error {...{ kcContext, ...props }} />;
-        case "terms.ftl": return <Terms {...{ kcContext, ...props }} />;
-        case "my-extra-page-1.ftl": return <MyExtraPage1 {...{ kcContext, ...props }} />;
-        case "my-extra-page-2.ftl": return <MyExtraPage2 {...{ kcContext, ...props }} />;
-        default: return <KcAppBase {...{ kcContext, ...props }} />;
+        case "login.ftl": return <Login {...{ kcContext, ...kcProps }} />;
+        case "register.ftl": return <Register {...{ kcContext, ...kcProps }} />;
+        case "info.ftl": return <Info {...{ kcContext, ...kcProps }} />;
+        case "error.ftl": return <Error {...{ kcContext, ...kcProps }} />;
+        case "terms.ftl": return <Terms {...{ kcContext, ...kcProps }} />;
+        case "my-extra-page-1.ftl": return <MyExtraPage1 {...{ kcContext, ...kcProps }} />;
+        case "my-extra-page-2.ftl": return <MyExtraPage2 {...{ kcContext, ...kcProps }} />;
+        default: return <KcAppBase {...{ kcContext, ...kcProps }} />;
     }
 });
+
+const useStyles = makeStyles({ "name": { KcApp }})(theme => ({
+    "kcButtonPrimaryClass": {
+        "color": theme.primaryButtonTextColor,
+        "backgroundColor": theme.primaryButtonColor,
+        "&:hover": {
+            "backgroundColor": theme.primaryButtonHoverColor
+        }
+    }
+}));
