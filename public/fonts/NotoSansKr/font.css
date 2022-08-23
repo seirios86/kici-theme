@@ -1,0 +1,48 @@
+/*
+<link rel="preload" href="%PUBLIC_URL%/fonts/NotoSansKr/NotoSansKR-Thin.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="%PUBLIC_URL%/fonts/NotoSansKr/NotoSansKR-Light.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="%PUBLIC_URL%/fonts/NotoSansKr/NotoSansKR-Regular.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="%PUBLIC_URL%/fonts/NotoSansKr/NotoSansKR-Medium.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="%PUBLIC_URL%/fonts/NotoSansKr/NotoSansKr-Bold.woff2" as="font" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/fonts/NotoSansKr/font.css">
+*/
+
+@font-face {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url("./NotoSansKR-Thin.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("./NotoSansKR-Light.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-style: normal;
+    font-weight: normal; /*400*/
+    font-display: swap;
+    src: url("./NotoSansKR-Regular.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("./NotoSansKR-Medium.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-style: normal;
+    font-weight: bold; /*700*/
+    font-display: swap;
+    src: url("./NotoSansKR-Bold.woff2") format("woff2");
+  }

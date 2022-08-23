@@ -1,0 +1,48 @@
+/*
+<link rel="preload" href="%PUBLIC_URL%/fonts/Roboto/Roboto-Thin.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="%PUBLIC_URL%/fonts/Roboto/Roboto-Light.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="%PUBLIC_URL%/fonts/Roboto/Roboto-Regular.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="%PUBLIC_URL%/fonts/Roboto/Roboto-Medium.woff2" as="font" crossorigin="anonymous">
+<link rel="preload" href="%PUBLIC_URL%/fonts/Roboto/Roboto-Bold.woff2" as="font" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/fonts/Roboto/font.css">
+*/
+
+@font-face {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 100;
+    font-display: swap;
+    src: url("./Roboto-Thin.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("./Roboto-Light.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal; /*400*/
+    font-display: swap;
+    src: url("./Roboto-Regular.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("./Roboto-Medium.woff2") format("woff2");
+  }
+  
+  @font-face {
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold; /*700*/
+    font-display: swap;
+    src: url("./Roboto-Bold.woff2") format("woff2");
+  }
