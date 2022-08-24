@@ -39,7 +39,7 @@ export const Login = memo(({ kcContext, ...props }: { kcContext: KcContext_Login
             displayInfo={social.displayInfo}
             displayWide={realm.password && social.providers !== undefined}
             // headerNode={msg("doLogIn")}
-            headerNode={"로그인"}
+            headerNode={"IDP 로그인"}
             formNode={
                 <div id="kc-form" className={cx(realm.password && social.providers !== undefined && props.kcContentWrapperClass)}>
                     <div
@@ -57,15 +57,14 @@ export const Login = memo(({ kcContext, ...props }: { kcContext: KcContext_Login
                                             : "usernameOrEmail";
 
                                         const autoCompleteHelper: typeof label = label === "usernameOrEmail" ? "username" : label;
+                                        const labelKr = label === "usernameOrEmail" ? "아이디 또는 이메일 주소" : 
+                                                        label === "username" ? "아이디" : "이메일 주소";
 
                                         return (
                                             <>
                                                 <label htmlFor={autoCompleteHelper} className={cx(props.kcLabelClass)}>
                                                     {/* {msg(label)} */}
-                                                    {
-                                                        label === "usernameOrEmail" ? "사용자명 또는 이메일 주소" : 
-                                                        label === "username" ? "사용자명" : "이메일 주소"
-                                                    }
+                                                    {labelKr}
                                                 </label>
                                                 <input
                                                     tabIndex={1}
@@ -83,6 +82,7 @@ export const Login = memo(({ kcContext, ...props }: { kcContext: KcContext_Login
                                                               "autoFocus": true,
                                                               "autoComplete": "off",
                                                           })}
+                                                    placeholder={labelKr + " 입력"}
                                                 />
                                             </>
                                         );
@@ -100,6 +100,7 @@ export const Login = memo(({ kcContext, ...props }: { kcContext: KcContext_Login
                                         name="password"
                                         type="password"
                                         autoComplete="off"
+                                        placeholder={"비밀번호 입력"}
                                     />
                                 </div>
                                 <div className={cx(props.kcFormGroupClass, props.kcFormSettingClass)}>
@@ -118,7 +119,8 @@ export const Login = memo(({ kcContext, ...props }: { kcContext: KcContext_Login
                                                               }
                                                             : {})}
                                                     />
-                                                    {msg("rememberMe")}
+                                                    {/* {msg("rememberMe")} */}
+                                                    {"로그인 상태 유지"}
                                                 </label>
                                             </div>
                                         )}
@@ -128,7 +130,7 @@ export const Login = memo(({ kcContext, ...props }: { kcContext: KcContext_Login
                                             <span>
                                                 <a tabIndex={5} href={url.loginResetCredentialsUrl}>
                                                     {/* {msg("doForgotPassword")} */}
-                                                    {"비밀번호 재설정"}
+                                                    {"비밀번호 찾기"}
                                                 </a>
                                             </span>
                                         )}

@@ -34,6 +34,10 @@ export const KcApp = memo(({ kcContext }: { kcContext: KcContext; }) => {
             // ...defaultKcProps.kcButtonPrimaryClass,
             classes.kcButtonPrimaryClass,
         ],
+        "kcLoginClass": [
+            ...defaultKcProps.kcLoginClass,
+            classes.kcLoginClass,
+        ],
     };
 
     switch (kcContext.pageId) {
@@ -63,10 +67,11 @@ const useStyles = makeStyles({ "name": { KcApp }})(theme => ({
     },
     "kcFormCardClass": {
         "border": `1px solid rgba(0,0,0,0.1)`,
+        "borderRadius": `8px`,
     },
     "kcFormHeaderClass": {
         "& #kc-page-title": {
-            "font-weight": `bold`,
+            "fontWeight": `bold`,
         },
     },
     "kcButtonPrimaryClass": {
@@ -75,5 +80,29 @@ const useStyles = makeStyles({ "name": { KcApp }})(theme => ({
         "&:hover": {
             "backgroundColor": theme.primaryButtonHoverColor
         },
+        "borderRadius": `4px`,
+        "height": `48px`,
+        "fontSize": `16px`,
+        "fontWeight": `500`,
+    },
+    "kcLoginClass": {
+        ".form-control": {
+            "borderRadius": `4px`,
+            "height": `40px`,
+            "fontSize": `14px`,
+            "padding": `16px`,
+            "backgroundColor": `#F8F9FB`,
+            "borderColor": `#D6DBE4`,
+            "color": `#222222`,
+            "box-shadow": `none`,
+            "&:focus": {
+                "backgroundColor": `#FFFFFF`,
+                "borderColor": `#194BDC`,
+            },
+            "&::placeholder": {
+                "fontStyle": `normal`,
+                "color": `#222 0.5`,
+            }
+        }
     },
 }));
