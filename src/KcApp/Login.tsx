@@ -1,7 +1,7 @@
 import { useState, memo } from "react";
 import { Template } from "keycloakify/lib/components/Template";
 import type { KcProps } from "keycloakify";
-import { getMsg } from "keycloakify";
+// import { getMsg } from "keycloakify";
 import { useCssAndCx } from "tss-react";
 import { useConstCallback } from "powerhooks/useConstCallback";
 import type { FormEventHandler } from "react";
@@ -12,7 +12,7 @@ type KcContext_Login = Extract<KcContext, { pageId: "login.ftl"; }>;
 export const Login = memo(({ kcContext, ...props }: { kcContext: KcContext_Login } & KcProps) => {
     const { social, realm, url, usernameEditDisabled, login, auth, registrationDisabled } = kcContext;
 
-    const { msg, msgStr } = getMsg(kcContext);
+    // const { msg, msgStr } = getMsg(kcContext);
 
     const { cx } = useCssAndCx();
 
