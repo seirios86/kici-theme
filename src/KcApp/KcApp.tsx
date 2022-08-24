@@ -18,6 +18,18 @@ export const KcApp = memo(({ kcContext }: { kcContext: KcContext; }) => {
 
     const kcProps = {
         ...defaultKcProps,
+        "kcHtmlClass": [
+            ...defaultKcProps.kcHtmlClass,
+            classes.kcHtmlClass
+        ],
+        "kcFormCardClass": [
+            ...defaultKcProps.kcFormCardClass,
+            classes.kcFormCardClass
+        ],
+        "kcFormHeaderClass": [
+            ...defaultKcProps.kcFormHeaderClass,
+            classes.kcFormHeaderClass
+        ],
         "kcButtonPrimaryClass": [
             // ...defaultKcProps.kcButtonPrimaryClass,
             classes.kcButtonPrimaryClass,
@@ -37,11 +49,31 @@ export const KcApp = memo(({ kcContext }: { kcContext: KcContext; }) => {
 });
 
 const useStyles = makeStyles({ "name": { KcApp }})(theme => ({
+    "kcHtmlClass": {
+        "& body": {
+            "background": `no-repeat center center fixed`,
+        },
+        "background": `#fff`,
+        "& #kc-header": {
+            "color": `#222222`,
+        },
+        "& #kc-header-wrapper": {
+            "textTransform": "none",
+        },
+    },
+    "kcFormCardClass": {
+        "border": `1px solid rgba(0,0,0,0.1)`,
+    },
+    "kcFormHeaderClass": {
+        "& #kc-page-title": {
+            "font-weight": `bold`,
+        },
+    },
     "kcButtonPrimaryClass": {
         "color": theme.primaryButtonTextColor,
         "backgroundColor": theme.primaryButtonColor,
         "&:hover": {
             "backgroundColor": theme.primaryButtonHoverColor
-        }
-    }
+        },
+    },
 }));
