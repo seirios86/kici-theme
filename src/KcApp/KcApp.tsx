@@ -2,6 +2,7 @@ import { memo } from "react";
 import type { KcContext } from "./kcContext";
 import { defaultKcProps } from "keycloakify";
 import { Login } from "./Login";
+import { LoginResetPassword } from "./LoginResetPassword";
 import { Register } from "./Register";
 import { Info } from "keycloakify/lib/components/Info";
 import { Error } from "keycloakify/lib/components/Error";
@@ -37,6 +38,7 @@ export const KcApp = memo(({ kcContext }: { kcContext: KcContext; }) => {
 
     switch (kcContext.pageId) {
         case "login.ftl": return <Login {...{ kcContext, ...kcProps }} />;
+        case "login-reset-password.ftl": return <LoginResetPassword {...{ kcContext, ...kcProps }} />;
         case "register.ftl": return <Register {...{ kcContext, ...kcProps }} />;
         case "info.ftl": return <Info {...{ kcContext, ...kcProps }} />;
         case "error.ftl": return <Error {...{ kcContext, ...kcProps }} />;
