@@ -129,6 +129,22 @@ const useStyles = makeStyles({ "name": { KcApp }})(theme => ({
             "fontSize": `16px`,
             "fontWeight": 500,
         },
+        ".btn-primary": {
+            ":active": {
+                "backgroundColor": `#EBC900`,
+                "color": `#222222`,
+                "border": `none`,
+                "box-shadow": `none`,
+            },
+            ":focus": {
+                "backgroundColor": `#EBC900`,
+                "color": `#222222`,
+                "outline": `none`,
+                "&-visible": {
+                    "outline": `unset`,
+                }
+            }
+        }
     },
     "kcFormHeaderClass": {
         "#kc-page-title": {
@@ -153,6 +169,9 @@ const useStyles = makeStyles({ "name": { KcApp }})(theme => ({
             "backgroundColor": `#EBC900`,
             "color": `#222222`,
         },
+        ":active": {
+            "backgroundColor": `none`
+        }
     },
     "kcLoginClass": {
         ".form-control": {
