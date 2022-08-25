@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 import { App } from "./App";
-import { kcContext } from "./KcApp/kcContext";
-import { KcApp } from "./KcApp";
+import { KcApp } from "./components/KcApp";
+import { kcContext } from "./components/kcContext";
 
 ReactDOM.render(
   kcContext === undefined ?
