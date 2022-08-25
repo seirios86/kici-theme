@@ -34,6 +34,7 @@ export const LoginPageExpired = memo(({ kcContext, ...props }: { kcContext: KcCo
                             {msg("doClickHere")}
                         </a>{" "}
                         . */}
+                        <br />
                         {"로그인 프로세스를 계속하려면 "}
                         <a id="loginRestartLink" href={url.loginRestartFlowUrl}>
                             {"여기"}
