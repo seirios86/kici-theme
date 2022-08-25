@@ -35,7 +35,8 @@ export const LoginOtp = memo(({ kcContext, ...props }: { kcContext: KcContextBas
         <Template
             {...{ kcContext, ...props }}
             doFetchDefaultThemeResources={true}
-            headerNode={msg("doLogIn")}
+            // headerNode={msg("doLogIn")}
+            headerNode={"IDP 로그인"}
             formNode={
                 <form id="kc-otp-login-form" className={cx(props.kcFormClass)} action={url.loginAction} method="post">
                     {otpLogin.userOtpCredentials.length > 1 && (
@@ -56,12 +57,15 @@ export const LoginOtp = memo(({ kcContext, ...props }: { kcContext: KcContextBas
                     <div className={cx(props.kcFormGroupClass)}>
                         <div className={cx(props.kcLabelWrapperClass)}>
                             <label htmlFor="otp" className={cx(props.kcLabelClass)}>
-                                {msg("loginOtpOneTime")}
+                                {/* {msg("loginOtpOneTime")} */}
+                                {"일회성 코드"}
                             </label>
                         </div>
 
                         <div className={cx(props.kcInputWrapperClass)}>
-                            <input id="otp" name="otp" autoComplete="off" type="text" className={cx(props.kcInputClass)} autoFocus />
+                            <input id="otp" name="otp" autoComplete="off" type="text" className={cx(props.kcInputClass)} autoFocus
+                                placeholder="일회성 코드 입력"
+                            />
                         </div>
                     </div>
 
@@ -76,7 +80,8 @@ export const LoginOtp = memo(({ kcContext, ...props }: { kcContext: KcContextBas
                                 name="login"
                                 id="kc-login"
                                 type="submit"
-                                value={msgStr("doLogIn")}
+                                // value={msgStr("doLogIn")}
+                                value={"로그인"}
                             />
                         </div>
                     </div>
