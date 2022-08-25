@@ -122,6 +122,7 @@ const useStyles = makeStyles({ "name": { KcApp }})(theme => ({
         },
     },
     "kcButtonPrimaryClass": {
+        "width": `100%`,
         "backgroundImage": `none`,
         "border": `none`,
         "box-shadow": `none`,

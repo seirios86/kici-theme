@@ -27,7 +27,10 @@ export const LoginConfigTotp = memo(({ kcContext, ...props }: { kcContext: KcCon
                 <>
                     <ol id="kc-totp-settings">
                         <li>
-                            <p>{msg("loginTotpStep1")}</p>
+                            <p>
+                                {/* {msg("loginTotpStep1")} */}
+                                {"모바일에 다음 애플리케이션 중 하나를 설치합니다."}
+                            </p>
 
                             <ul id="kc-totp-supported-apps">
                                 {totp.policy.supportedApplications.map(app => (
@@ -39,7 +42,9 @@ export const LoginConfigTotp = memo(({ kcContext, ...props }: { kcContext: KcCon
                         {mode && mode == "manual" ? (
                             <>
                                 <li>
-                                    <p>{msg("loginTotpManualStep2")}</p>
+                                    <p>
+                                        {msg("loginTotpManualStep2")}
+                                    </p>
                                     <p>
                                         <span id="kc-totp-secret-key">{totp.totpSecretEncoded}</span>
                                     </p>
@@ -77,19 +82,29 @@ export const LoginConfigTotp = memo(({ kcContext, ...props }: { kcContext: KcCon
                             </>
                         ) : (
                             <li>
-                                <p>{msg("loginTotpStep2")}</p>
+                                <p>
+                                    {/* {msg("loginTotpStep2")} */}
+                                    {"애플리케이션을 열고 바코드를 스캔합니다."}
+                                </p>
                                 <img id="kc-totp-secret-qr-code" src={`data:image/png;base64, ${totp.totpSecretQrCode}`} alt="Figure: Barcode" />
                                 <br />
                                 <p>
                                     <a href={totp.manualUrl} id="mode-manual">
-                                        {msg("loginTotpUnableToScan")}
+                                        {/* {msg("loginTotpUnableToScan")} */}
+                                        {"스캔할 수 없습니까?"}
                                     </a>
                                 </p>
                             </li>
                         )}
                         <li>
-                            <p>{msg("loginTotpStep3")}</p>
-                            <p>{msg("loginTotpStep3DeviceName")}</p>
+                            <p>
+                                {/* {msg("loginTotpStep3")} */}
+                                {"애플리케이션에서 제공한 일회성 코드를 입력하고 확인 버튼을 클릭하여 설정을 완료합니다."}
+                            </p>
+                            <p>
+                                {/* {msg("loginTotpStep3DeviceName")} */}
+                                {"OTP 장치를 관리하는 데 도움이 되도록 장치 이름을 입력하십시오."}
+                            </p>
                         </li>
                     </ol>
 
@@ -97,7 +112,8 @@ export const LoginConfigTotp = memo(({ kcContext, ...props }: { kcContext: KcCon
                         <div className={cx(props.kcFormGroupClass)}>
                             <div className={cx(props.kcInputWrapperClass)}>
                                 <label htmlFor="totp" className={cx(props.kcLabelClass)}>
-                                    {msg("authenticatorCode")}
+                                    {/* {msg("authenticatorCode")} */}
+                                    {"일회성 코드"}
                                 </label>{" "}
                                 <span className="required">*</span>
                             </div>
@@ -109,6 +125,7 @@ export const LoginConfigTotp = memo(({ kcContext, ...props }: { kcContext: KcCon
                                     autoComplete="off"
                                     className={cx(props.kcInputClass)}
                                     aria-invalid={messagesPerField.existsError("totp")}
+                                    placeholder="일회성 코드 입력"
                                 />
 
                                 {messagesPerField.existsError("totp") && (
@@ -137,6 +154,7 @@ export const LoginConfigTotp = memo(({ kcContext, ...props }: { kcContext: KcCon
                                     autoComplete="off"
                                     className={cx(props.kcInputClass)}
                                     aria-invalid={messagesPerField.existsError("userLabel")}
+                                    placeholder="장치 이름 입력"
                                 />
                                 {messagesPerField.existsError("userLabel") && (
                                     <span id="input-error-otp-label" className={cx(props.kcInputErrorMessageClass)} aria-live="polite">
@@ -174,7 +192,8 @@ export const LoginConfigTotp = memo(({ kcContext, ...props }: { kcContext: KcCon
                                 type="submit"
                                 className={cx(props.kcButtonClass, props.kcButtonPrimaryClass, props.kcButtonLargeClass)}
                                 id="saveTOTPBtn"
-                                value={msgStr("doSubmit")}
+                                // value={msgStr("doSubmit")}
+                                value={"확인"}
                             />
                         )}
                     </form>
