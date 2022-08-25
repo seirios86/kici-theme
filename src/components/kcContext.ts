@@ -23,7 +23,10 @@ export const { kcContext } = getKcContext<
 // "mockPageId": "login-reset-password.ftl",
 // "mockPageId": "login-update-password.ftl",
 // "mockPageId": "register.ftl",
-// "mockPageId": "login-config-totp.ftl",
+// "mockPageId": "login-config-totp.ftl",y
+// "mockPageId": "terms.ftl",
+// "mockPageId": "login-verify-email.ftl",
+// "mockPageId": "login-otp.ftl",
 
 /** 
  * Customize the simulated kcContext that will let us 

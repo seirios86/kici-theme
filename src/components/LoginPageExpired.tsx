@@ -14,20 +14,31 @@ export const LoginPageExpired = memo(({ kcContext, ...props }: { kcContext: KcCo
             {...{ kcContext, ...props }}
             doFetchDefaultThemeResources={true}
             displayMessage={false}
-            headerNode={msg("pageExpiredTitle")}
+            // headerNode={msg("pageExpiredTitle")}
+            headerNode={"페이지가 만료되었습니다"}
             formNode={
                 <>
                     <p id="instruction1" className="instruction">
-                        {msg("pageExpiredMsg1")}
+                        {/* {msg("pageExpiredMsg1")}
                         <a id="loginRestartLink" href={url.loginRestartFlowUrl}>
                             {msg("doClickHere")}
                         </a>{" "}
-                        .<br />
-                        {msg("pageExpiredMsg2")}{" "}
+                        .<br /> */}
+                        {"로그인 프로세스를 다시 시작하려면 "}
+                        <a id="loginRestartLink" href={url.loginRestartFlowUrl}>
+                            {"여기"}
+                        </a>
+                        {"를 클릭하십시오."}
+                        {/* {msg("pageExpiredMsg2")}{" "}
                         <a id="loginContinueLink" href={url.loginAction}>
                             {msg("doClickHere")}
                         </a>{" "}
-                        .
+                        . */}
+                        {"로그인 프로세스를 계속하려면 "}
+                        <a id="loginRestartLink" href={url.loginRestartFlowUrl}>
+                            {"여기"}
+                        </a>
+                        {"를 클릭하십시오."}
                     </p>
                 </>
             }

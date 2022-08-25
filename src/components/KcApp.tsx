@@ -72,6 +72,7 @@ export const KcApp = memo(({ kcContext }: { kcContext: KcContextBase }) => {
         case "login-page-expired.ftl":
             return <LoginPageExpired {...{ kcContext, ...kcProps }} />;
         case "login-config-totp.ftl":
+            console.log("pageId", kcContext.pageId);
             return <LoginConfigTotp {...{ kcContext, ...kcProps }} />;
         case "logout-confirm.ftl":
             return <LogoutConfirm {...{ kcContext, ...kcProps }} />;
