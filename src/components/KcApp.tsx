@@ -110,7 +110,25 @@ const useStyles = makeStyles({ "name": { KcApp }})(theme => ({
             ":hover" : {
                 "color": "#637282",
             },
-        }
+        },
+        "#saveTOTPBtn": {
+            "width": `100%`,
+        },
+        "#kc-accept": {
+            "width": `80px`,
+        },
+        "#kc-decline": {
+            "backgroundImage": `none`,
+            "border": `none`,
+            "box-shadow": `none`,
+            "color": `#FFFFFF`,
+            "backgroundColor": `#222222`,
+            "borderRadius":`4px`,
+            "height": `48px`,
+            "width": `80px`,
+            "fontSize": `16px`,
+            "fontWeight": 500,
+        },
     },
     "kcFormHeaderClass": {
         "#kc-page-title": {
@@ -122,20 +140,19 @@ const useStyles = makeStyles({ "name": { KcApp }})(theme => ({
         },
     },
     "kcButtonPrimaryClass": {
-        "width": `100%`,
         "backgroundImage": `none`,
         "border": `none`,
         "box-shadow": `none`,
         "color": `#222222`,
         "backgroundColor": `#FFDB00`,
-        ":hover": {
-            "backgroundColor": `#EBC900`,
-            "color": `#222222`,
-        },
         "borderRadius": `4px`,
         "height": `48px`,
         "fontSize": `16px`,
         "fontWeight": 500,
+        ":hover": {
+            "backgroundColor": `#EBC900`,
+            "color": `#222222`,
+        },
     },
     "kcLoginClass": {
         ".form-control": {

@@ -39,7 +39,7 @@ export const LoginConfigTotp = memo(({ kcContext, ...props }: { kcContext: KcCon
                             </ul>
                         </li>
 
-                        {mode && mode == "manual" ? (
+                        {mode && mode === "manual" ? (
                             <>
                                 <li>
                                     <p>
